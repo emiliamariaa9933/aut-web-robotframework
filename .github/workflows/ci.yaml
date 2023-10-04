@@ -1,4 +1,4 @@
-name: Automated Regressive Tests
+name: Automated WEB Regressive Tests
 
 on:
   push:
