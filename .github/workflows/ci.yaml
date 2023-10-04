@@ -1,0 +1,47 @@
+name: Automated Regressive Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+
+jobs:
+  regressive_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Running Regressive Tests
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          rfbrowser init
+          python -m robot -d regressive_tests tests
+        continue-on-error: true 
+
+      - name: Publish Artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: regressive_tests
+          path: regressive_tests/*
