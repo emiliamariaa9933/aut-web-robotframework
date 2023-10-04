@@ -15,6 +15,7 @@ Realizar o preenchimento do campos com dados aleatórios, anexa um arquivo e sal
 
   # Editar campos do Personal Details
   Wait Until Element is Visible  ${my_info.input_firstname}  timeout=10
+  Sleep  1
   Clicar no Elemento  ${my_info.input_firstname}
   Limpar Campo  ${my_info.input_firstname}
   Clicar no Elemento  ${my_info.input_firstname}
