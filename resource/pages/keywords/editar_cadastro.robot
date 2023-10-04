@@ -10,12 +10,13 @@ o usuário esteja no site da OrangeHRM
 
 Realizar o preenchimento do campos com dados aleatórios, anexa um arquivo e salvar cada etapa
   [Documentation]  Keyword responsável por preencher os campos referente a tela "My Info"
+  Sleep  1
   ${name_fake}  FakerLibrary.Last Name Female
   ${last_name_fake}  FakerLibrary.Name Female
 
+
   # Editar campos do Personal Details
   Wait Until Element is Visible  ${my_info.input_firstname}  timeout=10
-  Sleep  1
   Clicar no Elemento  ${my_info.input_firstname}
   Limpar Campo  ${my_info.input_firstname}
   Clicar no Elemento  ${my_info.input_firstname}
