@@ -104,7 +104,7 @@ obs: Quando aparecer o job 'Automated Regressive Tests', clique nele para acompa
 > 2. Clicar no botão 'Code' e copiar o endereço HTTPS fornecido pelo github
 > 3. Abrir algum terminal no windows na pasta em que deseja que fique o repositório na sua maquina e digitar o seguinte comando:
 > ```
-> git clone https://github.com/emiliamariaa9933/aut-web-robotframework.git.git
+> git clone https://github.com/emiliamariaa9933/aut-web-robotframework.git
 > ```
 > obs: Se for a primeira vez clonando repositório , vai ser necessário fornecer suas credenciais usadas para logar no github.
 > 
